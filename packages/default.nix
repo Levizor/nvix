@@ -40,13 +40,37 @@ let
     self.nvixPlugins.autosession
     self.nvixPlugins.ai
   ];
+  levizorModules = bareModules ++ [
+    # noice for cmdline
+    self.nvixPlugins.noice
+
+    # oil
+    self.nvixPlugins.oil
+
+    # Git and version control
+    self.nvixPlugins.git
+
+    # UI and appearance
+    self.nvixPlugins.lualine
+    self.nvixPlugins.firenvim
+
+    # Code editing and syntax
+    self.nvixPlugins.treesitter
+    self.nvixPlugins.blink-cmp
+    self.nvixPlugins.lang
+    self.nvixPlugins.lsp
+
+    # Productivity
+    self.nvixPlugins.autosession
+  ];
   fullModules = coreModules ++ [
     self.nvixPlugins.tex
   ];
 in
 {
-  packages = {
-    default = self'.packages.core;
+  packages = rec {
+    levizor = mkNixvim levizorModules;
+    default = levizor;
     bare = mkNixvim bareModules;
     core = mkNixvim coreModules;
     full = mkNixvim fullModules;
