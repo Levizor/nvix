@@ -2,7 +2,7 @@
 {
   colorschemes = {
     catppuccin = {
-      enable = true;
+      enable = false;
       settings = {
         integrations.native_lsp = {
           enabled = true;
@@ -38,6 +38,14 @@
           bold = true;
         };
       };
+    };
+  };
+
+  colorschemes.cyberdream = {
+    enable = true;
+    settings = {
+      transparent = config.nvix.transparent;
+      italic_comments = true;
     };
   };
 }
