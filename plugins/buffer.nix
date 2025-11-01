@@ -58,7 +58,7 @@ in
     ) "Harpoon ui")
 
     (mkKeymap "n" "<leader>bp" "<cmd>:BufferLinePick<cr>" "Buffer Line Pick")
-    (mkKeymap "n" "<leader>qc" "<cmd>:bp | bd #<cr>" "Buffer close")
+    (mkKeymap "n" "<leader>x" "<cmd>:bp | bd #<cr>" "Buffer close")
 
     (mkKeymap "n" "<leader>bP" "<cmd>BufferLineTogglePin<cr>" "Buffer Pin")
     (mkKeymap "n" "<leader>bd" "<cmd>BufferLineSortByDirectory<cr>" "Buffer Sort by dir")
