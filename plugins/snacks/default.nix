@@ -121,11 +121,6 @@ in
             "|" = (utils.listToUnkeyedAttrs [ "edit_vsplit" ]) // {
               mode = "n";
             };
-            "<cr>" =
-              # lua
-              mkRaw ''
-                { { "pick_win", "jump" } }
-              '';
           };
         in
         {
