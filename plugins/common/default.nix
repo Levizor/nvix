@@ -77,6 +77,10 @@ in
     tabstop = 2;
     softtabstop = 2;
 
+    wrap = true;
+    linebreak = true;
+    breakindent = true;
+
     ignorecase = true;
     smartcase = true;
     mouse = "a";
@@ -96,8 +100,6 @@ in
     conceallevel = 2;
 
     undofile = true;
-
-    wrap = false;
 
     virtualedit = "block";
     winminwidth = 5;
