@@ -5,6 +5,7 @@ let
 in
 {
   plugins = {
+    hop.enable = true;
     harpoon = {
       enable = true;
     };
