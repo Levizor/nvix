@@ -5,8 +5,12 @@
       enable = true;
       settings = {
         pyright.disableOrganizeImports = true;
-        python.analysis.ignore = [ "*" ];
       };
     };
   };
+
+  plugins.conform-nvim.settings = {
+    formatters_by_ft.python = [ "ruff" ];
+  };
+
 }
