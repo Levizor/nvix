@@ -9,28 +9,9 @@ in
     harpoon = {
       enable = true;
     };
-    bufferline = {
-      enable = true;
-      settings.options = rec {
-        diagnostics = "nvim_lsp";
-        buffer_close_icon = "󰅙";
-        close_icon = buffer_close_icon;
-        always_show_bufferline = true;
-        hover = {
-          enabled = true;
-          delay = 200;
-          reveal = [ "close" ];
-        };
-      };
-    };
   };
 
   wKeyList = [
-    (wKeyObj [
-      "<leader>b"
-      ""
-      "buffers"
-    ])
     (wKeyObj [
       "<leader><tab>"
       ""
@@ -39,7 +20,7 @@ in
   ];
 
   keymaps = [
-    (mkKeymap "n" "<leader>b." (
+    (mkKeymap "n" "<leader>h." (
       # lua
       mkRaw ''
         function()
@@ -48,7 +29,7 @@ in
         end
       ''
     ) "Add File to Harpoon")
-    (mkKeymap "n" "<leader>bb" (
+    (mkKeymap "n" "<leader>hh" (
       # lua
       mkRaw ''
         function()
@@ -58,24 +39,6 @@ in
       ''
     ) "Harpoon ui")
 
-    (mkKeymap "n" "<leader>bp" "<cmd>:BufferLinePick<cr>" "Buffer Line Pick")
-    (mkKeymap "n" "<leader>x" "<cmd>:bp | bd #<cr>" "Buffer close")
-
-    (mkKeymap "n" "<leader>bP" "<cmd>BufferLineTogglePin<cr>" "Buffer Pin")
-    (mkKeymap "n" "<leader>bd" "<cmd>BufferLineSortByDirectory<cr>" "Buffer Sort by dir")
-    (mkKeymap "n" "<leader>be" "<cmd>BufferLineSortByExtension<cr>" "Buffer Sort by ext")
-    (mkKeymap "n" "<leader>bt" "<cmd>BufferLineSortByTabs<cr>" "Buffer Sort by Tabs")
-    (mkKeymap "n" "<leader>bL" "<cmd>BufferLineCloseRight<cr>" "Buffer close all to right")
-    (mkKeymap "n" "<leader>bH" "<cmd>BufferLineCloseLeft<cr>" "Buffer close all to left")
-    (mkKeymap "n" "<leader>bc" "<cmd>BufferLineCloseOther<cr>"
-      "Buffer close all except the current buffer"
-    )
-    (mkKeymap "n" "<a-s-h>" "<cmd>BufferLineMovePrev<cr>" "Move buffer to left")
-    (mkKeymap "n" "<a-s-l>" "<cmd>BufferLineMoveNext<cr>" "Move buffer to right")
-
-    (mkKeymap "n" "<s-h>" ":BufferLineCyclePrev<cr>" "Buffer Previous")
-    (mkKeymap "n" "<s-l>" ":BufferLineCycleNext<cr>" "Buffer Next")
-
     (mkKeymap "n" "<leader><tab>j" "<cmd>tabn<cr>" "Next Tab")
     (mkKeymap "n" "<leader><tab>k" "<cmd>tabp<cr>" "Previous Tab")
     (mkKeymap "n" "<leader><tab>l" "<cmd>tabn<cr>" "Next Tab")
@@ -84,6 +47,52 @@ in
     (mkKeymap "n" "<leader>qt" "<cmd>tabclose<cr>" "Close Tab")
     (mkKeymap "n" "<leader><tab>q" "<cmd>tabclose<cr>" "Close Tab")
     (mkKeymap "n" "<leader><tab>n" "<cmd>tabnew<cr>" "New Tab")
+
+    (mkKeymap "n" "<M-1>" (mkRaw ''
+      function()
+        harpoon = require("harpoon")
+        harpoon:list():select(1)
+      end'') "Harpoon 1")
+    (mkKeymap "n" "<M-2>" (mkRaw ''
+      function()
+        harpoon = require("harpoon")
+        harpoon:list():select(2)
+      end'') "Harpoon 2")
+    (mkKeymap "n" "<M-3>" (mkRaw ''
+      function()
+        harpoon = require("harpoon")
+        harpoon:list():select(3)
+      end'') "Harpoon 3")
+    (mkKeymap "n" "<M-4>" (mkRaw ''
+      function()
+        harpoon = require("harpoon")
+        harpoon:list():select(4)
+      end'') "Harpoon 4")
+    (mkKeymap "n" "<M-5>" (mkRaw ''
+      function()
+        harpoon = require("harpoon")
+        harpoon:list():select(5)
+      end'') "Harpoon 5")
+    (mkKeymap "n" "<M-6>" (mkRaw ''
+      function()
+        harpoon = require("harpoon")
+        harpoon:list():select(6)
+      end'') "Harpoon 6")
+    (mkKeymap "n" "<M-7>" (mkRaw ''
+      function()
+        harpoon = require("harpoon")
+        harpoon:list():select(7)
+      end'') "Harpoon 7")
+    (mkKeymap "n" "<M-8>" (mkRaw ''
+      function()
+        harpoon = require("harpoon")
+        harpoon:list():select(8)
+      end'') "Harpoon 8")
+    (mkKeymap "n" "<M-9>" (mkRaw ''
+      function()
+        harpoon = require("harpoon")
+        harpoon:list():select(9)
+      end'') "Harpoon 9")
   ];
 
 }
