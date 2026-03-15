@@ -91,6 +91,19 @@ in
     (mkKeymap "x" "<leader>lf" "<cmd>:lua require('conform').format()<cr>" "Format File")
     (mkKeymap "v" "<leader>lf" "<cmd>:lua require('conform').format()<cr>" "Format File")
 
+    (mkKeymap "n" "<leader>ltf" (
+      # lua
+      mkRaw ''
+        function()
+          if vim.g.disable_autoformat then
+            vim.cmd("FormatEnable")
+          else
+            vim.cmd("FormatDisable")
+          end
+        end
+      ''
+    ) "Toggle Autoformat")
+
     (mkKeymap "n" "[d" "<cmd>:lua vim.diagnostic.goto_prev()<cr>" "Previous Diagnostic")
     (mkKeymap "n" "]d" "<cmd>:lua vim.diagnostic.goto_next()<cr>" "Next Diagnostic")
     (mkKeymap "n" "<leader>lL" (
