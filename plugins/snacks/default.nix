@@ -245,11 +245,24 @@ in
             list.keys = keys;
           };
         };
+
       image = {
         enabled = true;
         border = "none";
-        doc.inline = false;
+        doc = {
+          inline = false;
+          max_width = 60;
+          max_height = 33;
+        };
       };
+
+      styles = {
+        snacks_image = {
+          relative = "editor";
+          col = -1;
+        };
+      };
+
       notifier = {
         enabled = true;
         style = "minimal";
